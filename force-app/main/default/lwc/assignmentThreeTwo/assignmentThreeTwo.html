@@ -1,0 +1,37 @@
+<template>
+    <template if:true={opportunities}>
+        <lightning-card title="Opportunities">
+            <h2>Account Name: {accountName}</h2>
+            <table>
+            <thead>
+                <tr>
+                    <th>Opportunity Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={opportunities} for:item="opportunity">
+                    <tr key={opportunity.Id}>
+                        <td>{opportunity.Name}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>
+    <lightning-card title="Accounts">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={allAccounts} for:item="account">
+                    <tr key={account.Id}>
+                        <td onclick={onAccClick} data-accid={account.Id} >{account.Name}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

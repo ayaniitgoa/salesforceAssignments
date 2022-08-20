@@ -1,0 +1,34 @@
+<template>
+    <lightning-card title="Contact Names">
+
+        <template if:true={contactDetail}>
+            <lightning-card title="Contact Detail">
+
+                <p>First Name: {contactDetail.FirstName}</p>
+                <p>Last Name: {contactDetail.LastName}</p>
+                <p>Phone Name: {contactDetail.Phone}</p>
+                <p>Email Name: {contactDetail.Email}</p>
+                <p>Account Name: {contactDetail.Account.Name}</p>
+            </lightning-card>
+        </template>
+
+        <table>
+            <thead>
+                <tr>
+              
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <template for:each={allContacts} for:item="contact">
+                <tr key={contact.Id}>
+                  
+                    <td onclick={sendId} data-contactid={contact.Id} > {contact.FirstName} </td>
+                    <td> {contact.LastName} </td>
+                </tr>
+            </template>
+        </tbody>
+    </table>
+</lightning-card>
+</template>
