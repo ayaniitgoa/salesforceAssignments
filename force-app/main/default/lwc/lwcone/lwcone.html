@@ -1,0 +1,36 @@
+<template>
+    <lightning-card title="Information">
+        <div class="slds-card__body slds-card__body_inner">
+        <div class="slds-card__header-title">
+            {name}
+        </div>
+            <div class="">
+                Address: {address}
+            </div>
+            <div class="">
+                Phone Number: {phoneNo}
+            </div>
+        </div>
+       
+        <lightning-input class="inp" label="Enter Name" name="name" onchange={handleChange} value={empName}></lightning-input>
+        <lightning-input class="inp" label="Enter Emp No" name="empNo" onchange={handleChange} value={empNo}></lightning-input>
+        <lightning-button label="Submit" onclick={handleButtonClick} variant="brand"></lightning-button>
+        <div id="info" if:true={show} >
+            Information Entered:
+            <p>{empName}</p>
+            <p>{empNo}</p>
+        </div>
+    </lightning-card>
+    <lightning-card>
+        <lightning-input label="Student Name" name="name" onchange={handleStudentChange} value={studentName}></lightning-input>
+        <lightning-input type="number" label="Student Age" name="age" onchange={handleStudentChange} value={studentAge}></lightning-input>
+        <lightning-input type="number" label="Student Marks" name="marks" onchange={handleStudentChange} value={studentMarks}></lightning-input>
+        
+        <lightning-button label="Submit" onclick={handleStudentButtonClick} variant="brand"></lightning-button>
+        <div class="eligibilitymsg" if:true={showmsg}>
+
+            <p if:false={studentEligible} >Student is not eligible</p>
+            <p if:true={studentEligible} >Student is eligible</p>
+        </div>
+    </lightning-card>
+</template> 

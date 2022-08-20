@@ -1,0 +1,8 @@
+<template>
+    <lightning-card>
+        <lightning-input value={principal} name="principal" label="Principal" onchange={handleChange}></lightning-input>
+        <lightning-input value={rate} name="rate" label="Rate" onchange={handleChange}></lightning-input>
+        <lightning-input value={time} name="time" label="Time" onchange={handleChange}></lightning-input>
+        <lightning-button label="Calculate Amount" onclick={onBtnClick} ></lightning-button>
+    </lightning-card>
+</template>

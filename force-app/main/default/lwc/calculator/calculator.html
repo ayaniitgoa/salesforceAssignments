@@ -1,0 +1,19 @@
+<template>
+    <lightning-card>
+        <lightning-input value={var1} onchange={changeVar} name="var1" label="Enter First Variable">  </lightning-input>
+        <lightning-input value={var2} onchange={changeVar} name="var2" label="Enter Second Variable">  </lightning-input>
+        {var1}, {var2}
+        fheijfei
+        <lightning-button onclick={addi} label="+"></lightning-button>
+        <lightning-button onclick={sub} label="-"></lightning-button>
+        <lightning-button onclick={mul} label="*"></lightning-button>
+        <lightning-button onclick={div} label="/"></lightning-button>
+        <br/>
+        {ans}
+        <lightning-button onclick={calc} label="Calculate"></lightning-button>
+        <template if:true={showans}>
+            <p>Ans: {ans}</p>
+
+        </template>
+    </lightning-card>
+</template>

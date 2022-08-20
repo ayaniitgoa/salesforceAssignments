@@ -1,0 +1,12 @@
+<template>
+    <lightning-card>
+        <h1>Months</h1>
+        <template for:each={months} for:item="month" >
+            <p key={month}> {month} </p>
+        </template>
+        <h1>Days</h1>
+        <template for:each={days} for:item="day" >
+            <p key={day}> {day} </p>
+        </template>
+    </lightning-card>
+</template>
