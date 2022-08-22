@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Account Datatable" icon-name="standard:account">
+        <template if:true={allAccountWiredData.data}>
+            <lightning-datatable key-field="Id"
+                                 data={allAccountWiredData.data} 
+                                 columns={columns} 
+                                 onsave={handleAccountSave}
+                                 hide-checkbox-column 
+                                 show-row-number-column>
+            </lightning-datatable>
+        </template>
+    </lightning-card>
+</template>
